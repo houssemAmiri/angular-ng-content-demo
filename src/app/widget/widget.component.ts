@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-widget',
-  standalone: true,
-  template: `
+    selector: 'app-widget',
+    standalone: true,
+    template: `
     <div class="widget-header">
-      <div class="widget-title">Weather Forecast</div>
-      <div class="widget-sub-title">Currently in Vienna, Austria</div>
+      <ng-content select="[slot='header']"/>
     </div>
     <div class="widget-content">
-      <div class="sky-condition">☀️</div>
-      <div class="temperature">21°C</div>
+      <ng-content> 
+        <p class="no-content">No content ......</p>
+      </ng-content>
     </div>
   `,
 })
